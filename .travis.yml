@@ -1,1 +1,14 @@
 language: java
+jdk:
+  - oraclejdk8
+
+deploy:
+      - provider: s3
+        ⋮ # rest of S3 deployment for MyApp.zip
+      - provider: codedeploy
+        access_key_id: "AKIAJQM4IGP5ZTWHQPEA"
+        secret_access_key: "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"
+        bucket: "api-proxies-demo"
+        key: latest/pets-1.0-SNAPSHOT.jar
+        application: PetsDemo
+        deployment_group: PetsApiDemoGroup
