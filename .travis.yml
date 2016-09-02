@@ -4,7 +4,7 @@ jdk:
 
 deploy:
       - provider: s3
-        ⋮ # rest of S3 deployment for MyApp.zip
+         # rest of S3 deployment for MyApp.zip
       - provider: codedeploy
         access_key_id: "AKIAJQM4IGP5ZTWHQPEA"
         secret_access_key: "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"
