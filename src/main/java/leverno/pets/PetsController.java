@@ -39,7 +39,7 @@ public class PetsController {
         response.setStatus(200);
     }
     
-    @RequestMapping(value = "/pets", method = { RequestMethod.POST, RequestMethod.GET })
+    @RequestMapping(value = "/pets", method = {RequestMethod.GET })
     public @ResponseBody Pet process(@Context final HttpServletResponse response) {
         
         
@@ -54,7 +54,17 @@ public class PetsController {
         
         return result;
     }
-    
+
+    @RequestMapping(value = "/pets", method = { RequestMethod.POST})
+    public @ResponseBody String createPet(@Context final HttpServletResponse response) {
+
+
+        response.setHeader("CUSTOM-PET", "gotcha");
+        response.setStatus(200);
+
+        return "Success";
+    }
+
     public static void main(String[] args) {
         SpringApplication.run(PetsController.class, args);
     }
